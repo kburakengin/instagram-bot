@@ -14,6 +14,9 @@ class Instagram:
         self.followers = []
 
     def insta_login(self):
+        """
+        Logs in to the account with the your input information
+        """
         self.browser.get('https://www.instagram.com/accounts/login')
         time.sleep(2)
 
@@ -25,6 +28,9 @@ class Instagram:
         time.sleep(2)
 
     def get_followers(self):
+        """
+        Gets the followers of your account or any account which logged in
+        """
         self.browser.get(f'https://www.instagram.com/{self.username}')
         time.sleep(2)
 
@@ -63,6 +69,9 @@ class Instagram:
                 file.write(user + "\n")
 
     def follow_user(self, username):
+        """
+        Takes the username of the page you want to follow.
+        """
         self.browser.get('http://www.instagram.com/' + username)
         time.sleep(2)
 
@@ -74,6 +83,9 @@ class Instagram:
             print('You are already following')
 
     def unfollow_user(self, username):
+        """
+        Takes the username of the page you want to unfollow.
+        """
         self.browser.get('http://www.instagram.com/' + username)
         time.sleep(2)
 
@@ -92,5 +104,5 @@ insta = Instagram(username, password)
 if __name__ == '__main__':
     insta.insta_login()
     insta.get_followers()
-    insta.follow_user('kod_evreni')
-    insta.unfollow_user('kod_evreni')
+    insta.follow_user() # this method should take the username of the page
+    insta.unfollow_user() # this method should take the username of the page
