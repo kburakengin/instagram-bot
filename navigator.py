@@ -104,5 +104,5 @@ insta = Instagram(username, password)
 if __name__ == '__main__':
     insta.insta_login()
     insta.get_followers()
-    insta.follow_user() # this method should take the username of the page
-    insta.unfollow_user() # this method should take the username of the page
+    insta.follow_user('kod_evreni')  # this method should take the username of the page
+    insta.unfollow_user('kod_evreni')  # this method should take the username of the page
